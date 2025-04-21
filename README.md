@@ -1,4 +1,4 @@
-# Can LLMs Generate Tabular Summaries of Science Papers?\\Rethinking the Evaluation Protocol
+# Can LLMs Generate Tabular Summaries of Science Papers? Rethinking the Evaluation Protocol
 
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
 
@@ -7,6 +7,7 @@ This is the official data and code repository for the paper [Can LLMs Generate T
 ## arXiv2Table Benchmark
 The full benchmark is available in the `data` directory. Full text of the papers can be downloaded at [this link](https://hkustconnect-my.sharepoint.com/:u:/g/personal/wwangbw_connect_ust_hk/EeMgL0XuJeNKlMCZnGUZu6AB_D1Swe0Wz1DxnFeNpUP-PQ?e=SEfPcP).
 
+### Data Format
 Each data entry looks like:
 ```json
 {
@@ -34,6 +35,7 @@ Each data entry looks like:
 - `table_references`: A subset of `input_references_id` that were included in the final table (i.e., where the label is 1).
 - `sampled_noisy_paper`: A sample of papers labeled as irrelevant (0) included to simulate distractor papers. Useful for evaluating the robustness of LLM-based table generation against noisy retrieval results.
 
+### Benchmark Construction
 Code for constructing the benchmark is available in the `benchmark_construction` directory.
 To reproduce the benchmark:
 1. Download the [arxivDIGESTables](https://aclanthology.org/2024.emnlp-main.538.pdf) dataset, which is available at [this link](https://huggingface.co/datasets/blnewman/arxivDIGESTables).
